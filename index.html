@@ -1,1 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Mybeloved, Cila ❤️</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Arial,sans-serif;background:linear-gradient(135deg,#180012,#3d0026,#180012);color:#fff;overflow:hidden}
+.page{display:none;height:100vh;width:100vw;position:relative;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:25px}
+.active{display:flex}
+.bgblur{position:absolute;inset:0;background-size:cover;background-position:center;filter:blur(20px) brightness(.25);z-index:-2;transform:scale(1.2)}
+.overlay{position:absolute;inset:0;background:rgba(0,0,0,.2);z-index:-1}
+.photo{width:min(85vw,360px);height:min(65vh,500px);object-fit:cover;border-radius:24px;box-shadow:0 0 30px #ff69b4}
+h1{font-size:clamp(2rem,6vw,4rem);color:#ffb3d9}
+p{max-width:700px;line-height:1.8;margin-top:15px}
+.btn{padding:14px 28px;border:none;border-radius:999px;background:#ff4fa0;color:#fff;margin:10px;cursor:pointer}
+.counter{position:absolute;top:15px;right:20px}
+.float{position:fixed;color:rgba(255,182,193,.28);pointer-events:none;white-space:nowrap;animation:f 12s linear infinite}
+@keyframes f{from{transform:translateY(0)}to{transform:translateY(-250px)}}
+.heart{position:fixed;pointer-events:none;animation:h 10s linear infinite}
+@keyframes h{from{transform:translateY(110vh)}to{transform:translateY(-20vh)}}
+#noBtn{position:absolute}
+.qr{width:260px;border-radius:20px}
+</style>
+</head>
+<body>
 
+<audio id="bgMusic" loop>
+<source src="music/perfect.mp3" type="audio/mpeg">
+</audio>
+
+<div class="page active">
+<h1>For Mybeloved, Cila  ❤️</h1>
+<p>A little surprise made with love.</p>
+<p><b>Sent by your future, Fadel 💕</b></p>
+<button class="btn" onclick="startStory()">Open My Heart ❤️</button>
+</div>
+
+<script>
+const messages=[
+"Every time I see your smile, my day gets better🥰.",
+"You are one of the most beautiful people I've ever met wkwk🥳.",
+"Ama kamu tuh buat hati aku tenang dan nyaman😄.",
+"You are cute, kind, funny and amazing😘.",
+"Thank you for existing in my life😍.",
+"If I had to choose again, I'd still choose you🫣.",
+"You make ordinary moments feel special😊.",
+"I could talk to you for hours🫠.",
+"You are my favorite notification🤭.",
+"And now I want to ask something important..."
+];
+
+let html='';
+for(let i=1;i<=10;i++){
+html+=`<div class="page">
+<div class="bgblur" style="background-image:url('images/foto${i}.jpg')"></div>
+<div class="overlay"></div>
+<div class="counter">${i}/10</div>
+<img class="photo" src="images/foto${i}.jpg">
+function typeWriter(element){
+
+if(!element)return;
+
+const text = element.dataset.text;
+
+let i = 0;
+
+element.innerHTML = "";
+
+const timer = setInterval(()=>{
+
+element.innerHTML += text.charAt(i);
+
+i++;
+
+if(i >= text.length){
+clearInterval(timer);
+}
+
+},40);
+
+}
+<p class="typing" data-text="${messages[i-1]}"></p>
+<button class="btn" onclick="nextPage()">Next ❤️</button>
+</div>`;
+}
+
+html+=`
+<div class="page">
+<h1>A Letter For You 💌</h1>
+<p>Thank you for all the smiles, laughs and moments. You became someone very special to me. No matter how busy life gets, talking to you always makes my day brighter.</p>
+<button class="btn" onclick="nextPage()">Continue ❤️</button>
+</div>
+<div class="page">
+
+<h1>Our Little Chat 💬</h1>
+
+<div style="
+background:#fff;
+color:#000;
+padding:20px;
+border-radius:20px;
+max-width:350px;
+width:90%;
+">
+
+<p style="text-align:left;margin:10px;">
+💚 Ael:
+Aku mau bilang sesuatu...
+</p>
+
+<p style="text-align:right;margin:10px;">
+🤍 Cila:
+Apa tuch?
+</p>
+
+<p style="text-align:left;margin:10px;">
+💚 Ael:
+Aku suka senyummu.
+</p>
+
+<p style="text-align:right;margin:10px;">
+🤍 Cila:
+ihh 😳
+</p>
+
+<p style="text-align:left;margin:10px;">
+💚 Ael:
+Dan aku suka orangnya juga ❤️
+</p>
+
+</div>
+
+<button class="btn" onclick="nextPage()">
+Continue ❤️
+</button>
+
+</div>
+
+<div class="page">
+<h1>Will You Be My Girlfriend? ❤️</h1>
+function loveExplosion(){
+
+for(let i=0;i<80;i++){
+
+const heart =
+document.createElement("div");
+
+heart.innerHTML="💖";
+
+heart.style.position="fixed";
+
+heart.style.left="50%";
+
+heart.style.top="50%";
+
+heart.style.fontSize="30px";
+
+heart.style.zIndex="9999";
+
+heart.style.pointerEvents="none";
+
+const x=(Math.random()-0.5)*1000;
+const y=(Math.random()-0.5)*1000;
+
+heart.animate([
+{
+transform:"translate(0,0)",
+opacity:1
+},
+{
+transform:`translate(${x}px,${y}px)`,
+opacity:0
+}
+],{
+duration:2000
+});
+
+document.body.appendChild(heart);
+
+setTimeout(()=>{
+heart.remove();
+},2000);
+
+}
+
+}
+<button class="btn" onclick="loveExplosion();nextPage()">
+YES 💕
+</button>
+<button class="btn" id="noBtn">NO 😝</button>
+</div>
+
+<div class="page">
+<h1>Will You Be My Wife Someday? 💍</h1>
+<button class="btn" onclick="nextPage()">OF COURSE ❤️</button>
+</div>
+
+<div class="page">
+<h1>YAYYYYY ❤️</h1>
+<p>You just made me the happiest person alive.</p>
+<button class="btn" onclick="nextPage()">Final Surprise 🎁</button>
+</div>
+
+<div class="page">
+<h1>One Last Surprise ❤️</h1>
+<img class="qr" src="images/qr.png">
+<p>Scan the QR and thank you for reaching the end. ❤️</p>
+</div>`;
+
+document.body.insertAdjacentHTML('beforeend',html);
+
+const pages=document.querySelectorAll('.page');
+let current=0;
+
+function show(i){
+
+pages[current].classList.remove('active');
+
+current=i;
+
+pages[current].classList.add('active');
+
+const typing =
+pages[current].querySelector('.typing');
+
+if(typing){
+typeWriter(typing);
+}
+
+}
+
+function nextPage(){
+if(current<pages.length-1) show(current+1);
+}
+
+function startStory(){
+
+const music = document.getElementById("bgMusic");
+
+music.muted = false;
+music.volume = 1;
+
+music.play().then(()=>{
+console.log("Music playing");
+}).catch(err=>{
+alert("Music error: " + err);
+});
+
+nextPage();
+}
+
+const words=["I Love You ❤️","Beautiful ❤️","Future Wife 💍","My Sunshine ☀️","Pretty Girl 🌸","Cila ❤️","Fadel ❤️ Cila","Sweet Girl 💕","Forever ❤️"];
+for(let i=0;i<180;i++){
+let e=document.createElement('div');
+e.className='float';
+e.innerText=words[Math.floor(Math.random()*words.length)];
+e.style.left=Math.random()*100+'vw';
+e.style.top=Math.random()*100+'vh';
+e.style.animationDuration=(8+Math.random()*10)+'s';
+e.style.animationDelay=(-Math.random()*10)+'s';
+document.body.appendChild(e);
+}
+
+for(let i=0;i<60;i++){
+let h=document.createElement('div');
+h.className='heart';
+h.innerHTML='💖';
+h.style.left=Math.random()*100+'vw';
+h.style.animationDuration=(5+Math.random()*8)+'s';
+document.body.appendChild(h);
+}
+
+setTimeout(()=>{
+const noBtn=document.getElementById('noBtn');
+if(noBtn){
+noBtn.onmouseover=noBtn.onclick=()=>{
+noBtn.style.left=Math.random()*80+'vw';
+noBtn.style.top=Math.random()*80+'vh';
+};
+}
+},100);
+</script>
+</body>
+</html>
